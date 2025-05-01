@@ -1,6 +1,6 @@
 const express = require('express');
-// const mongoos=require('mongoose');
-const { Client } = require('pg');
+const mongoos=require('mongoose');
+// const { Client } = require('pg');
 const redis=require('redis');
 
 //init app
@@ -8,37 +8,37 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 
 // //connect DB
-// const DB_USER='root';
-// const DB_PASSWORD='example';
-// const DB_port=27017;
-// const DB_HOST='mongo';
-// const URI=`mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_port}`;
+const DB_USER='root';
+const DB_PASSWORD='example';
+const DB_port=27017;
+const DB_HOST='mongo';
+const URI=`mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_port}`;
 
 
 
-// mongoos
-// .connect(URI)
-// .then(()=>console.log('connected to db ... '))
-// .catch((err)=>console.log("failed to connect to db :",err));
+mongoos
+.connect(URI)
+.then(()=>console.log('connected to db ... '))
+.catch((err)=>console.log("failed to connect to db :",err));
 
 
 //connect postgressql DB
-const DB_USER='root';
-const DB_PASSWORD='example';
-const DB_port=5432;
-const DB_HOST='postgres';
-const URI=`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_port}`;
+// const DB_USER='root';
+// const DB_PASSWORD='example';
+// const DB_port=5432;
+// const DB_HOST='postgres';
+// const URI=`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_port}`;
 
-const client = new Client({
-  connectionString: URI,
-});
+// const client = new Client({
+//   connectionString: URI,
+// });
 
 
 
-client
-.connect()
-.then(()=>console.log('connected to db ... '))
-.catch((err)=>console.log("failed to connect to db :",err));
+// client
+// .connect()
+// .then(()=>console.log('connected to db ... '))
+// .catch((err)=>console.log("failed to connect to db :",err));
 
 
 
