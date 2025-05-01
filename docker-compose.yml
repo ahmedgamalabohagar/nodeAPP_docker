@@ -2,6 +2,7 @@ version: '3'
 services:
   node-app:
     container_name: node-app-container 
+    image: ahmedabohagar/nodeapp-aws 
     ports:
       - '4000:4000'
     env_file:

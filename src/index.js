@@ -55,7 +55,7 @@ redisClient.connect();
 
 app.get('/' , (req,res)=>{
         redisClient.set('products','products ...')
-        res.send('<h1>hello , a gemy</h1>')
+        res.send('<h1>hello gemy, from Docker hub</h1>')
     });
 
 
